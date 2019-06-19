@@ -1,0 +1,9 @@
+'''Kullanıcıdan input ile km cinsinden mesafe bilgisi alıp, bu bilgiyi mile dönüştürün ve sonucu ekrana printleyin.'''
+
+
+print("Find How Much Mile You Walked")
+distance=int(input("Enter Distance You Covered(M):"))
+print(distance,"M you covered.")
+KM=float(distance/1000)
+Mile=float(621.371192*KM)
+print(int(Mile),"miles you covered. Good job! Keep going...")
