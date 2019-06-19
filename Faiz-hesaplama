@@ -1,0 +1,45 @@
+'''Faiz hesaplama programi
+
+Icerik:
+Kullanicidan gerekli bilgileri alip faiz tutarini hesaplayin.
+
+Yontem:
+Bu programi calistirabilmeniz icin asagida belirtilen bilgileri input yardimi ile
+ kullanicidan almaniz gerekmektedir.
+    ⁃    Ana para
+    ⁃    Faiz suresi (yil)
+    ⁃    Faiz orani
+
+Faiz hesaplama formulu:
+Ana para x faiz suresi x faiz orani / 100
+
+Sonuc:
+Gerekli islemleri yaptiktan sonra output olarak toplam faiz tutarini,
+aylik ve gunluk ortalama faiz tutarini, toplam para miktarini (faiz+ana para);
+ 1) print ile ekrana yazin,
+ 2) ”faizHesaplama” isimli bir dosyaya
+     kaydedin.'''
+dosya=open("faizHesaplama","w")
+anapara=input('Ana Para:')
+faiz_suresi=input("Faiz Suersi:")
+faiz_orani=input("Faiz Orani:")
+print("Anapara:",anapara,file=dosya)
+print("Faiz suresi:",faiz_suresi,file=dosya)
+print("Faiz orani:",faiz_orani,file=dosya)
+
+toplamfaiz=(int(anapara)*int(faiz_suresi)*int(faiz_orani)/100)
+print("Odeyeceginiz taplam faiz tutari",int(toplamfaiz),"Tl'dir.")
+print("Odeyeceginiz taplam faiz tutari",int(toplamfaiz),"Tl'dir.",file=dosya)
+yillikfaiz=toplamfaiz/int(faiz_suresi)
+print("Odeyeceginiz yillik faiz tutari",int(yillikfaiz),"Tl'dir.",)
+print("Odeyeceginiz yillik faiz tutari",int(yillikfaiz),"Tl'dir.",file=dosya)
+aylikfaiz=yillikfaiz/12
+print("Aylik faiz tutari",int(aylikfaiz),"Tl'dir.")
+print("Aylik faiz tutari",int(aylikfaiz),"Tl'dir.",file=dosya)
+gunlukfaiz=aylikfaiz/30
+print("Gunluk faiz tutari",int(gunlukfaiz),"Tl'dir.")
+print("Gunluk faiz tutari",int(gunlukfaiz),"Tl'dir.",file=dosya)
+toplam=int(toplamfaiz)+int(anapara)
+print("Toplam odenecek tutar:",f'{toplam:,}',"Tl'dir.",file=dosya)
+print("Toplam odenecek tutar:",f'{toplam:,}',"Tl'dir.")
+dosya.close()
