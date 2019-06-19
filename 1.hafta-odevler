@@ -1,0 +1,23 @@
+"""Input ile kullanıcıdan bir kelime yazmasını isteyip, bu kelimeyi
+altı çizili ve etrafı desenli bir şekilde printleyin."""
+
+
+
+
+print("*******BABALAR GUNUNUZ KUTLU OLSUN*********")
+Baba_adi=input("Babanizin Adini Giriniz:")
+
+print("""  
+             ******       ******
+          *************************
+        *****       ****        *****
+        *****  BABALARIN BABASI *****
+                  """,Baba_adi,'''
+                  ''',"-"*len(Baba_adi),'''   
+           *****              *****
+             *****          *****
+                *****     *****
+                   **** *****
+                     ******
+                       ***
+                ''')
