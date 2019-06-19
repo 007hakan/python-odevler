@@ -1,0 +1,39 @@
+'''Oğrenci not ortalama programi
+
+Icerik:
+Kullanicidan input ile ad-soyad, vize, final ve ders takip bilgilerini alip bu degerleri
+yuzdelik oranlarina gore hesaplayin ve yil sonu notunu cikarin.
+
+Yontem:
+-Sinav puanlari ve ders takip puani 0-100 arasidir.
+-Bir öğrencinin gitmesi gereken toplam ders sayısı 20’dir. Kaçırılan
+her ders için 5 puan kırılacaktır. (Orn: 3 ders kaciran bir ogrencinin ders takip puani: 100-(3x5)=85 )
+Oranlar :
+- Vize Notu ( 30%)
+- Final Notu (50%)
+- Ders takip (20%)
+
+Sonuc:
+    0.    Output olarak ogrencinin yil sonu puanini ekrana pritleyin.
+    0.    Ogrenci ad-soyad, vize-final-ders takip bilgilerini ve hesapladiginiz
+    yil sonu puanini “ogrenciNotHesaplama” isimli bir dosyaya kaydedin.'''
+
+
+name=input("Enter Name:")
+surname=input("Enter Surname:")
+visa_point=input("Enter Visa Point:")
+final_point=input("Enter Final Point:")
+missed_lesson=input("Enter Number of Missed Lesson:")
+Entered_lesson=int((20-int(missed_lesson))*5)
+hesaplanan_puan=int(visa_point)*0.3+int(final_point)*0.5+int(Entered_lesson)*0.2
+print("mr/mss",name,surname,"Your Average Grade Point is:")
+print(hesaplanan_puan)
+dosya=open("ogrenciNotHesaplama","w")
+print(
+"Adi:",name,
+"Soyadi:",surname,
+"Vize:",visa_point,
+"Final:",final_point,
+"Kacan ders sayisi",missed_lesson,
+"Puani:",hesaplanan_puan,sep="\n",file=dosya)
+dosya.close()
