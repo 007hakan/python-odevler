@@ -1,0 +1,40 @@
+"""Aylik masraf programi
+
+Icerik:
+Aylık giderleri ve bu giderlerin aylik gelire oranini hesaplayan bir program yapmanız istenmektedir.
+
+Yontem:
+Asagida belirtilen harcama kalemlerini ve aylik geliri kullanicidan input ile alip gerekli hesaplamalari yapin
+
+Harcama kalemleri:
+-mutfak,
+-egitim,
+-giyim,
+-ulasim.
+
+Sonuc:
+1-Kullanicinin aylik toplam masrafini ve bu masrafin aylik gelirine oranini ekrana printleyin.
+2- Ayni sonucu “aylikmasraf” isimli bir dosyaya kaydedin."""
+aylikgelir=input("Toplam aylik gelirinizi belirtiniz:")
+mutfak=input("Mutfak Giderleri:")
+egitim=input("Egitim Giderleri:")
+giyim=input("Giyim Giderleri:")
+ulasim=input("Ulasim giderleri:")
+
+ayliktop_masraf=int(mutfak)+int(egitim)+int(giyim)+int(ulasim)
+print("Aylik Toplam masrafiniz",ayliktop_masraf,"tl'dir.")
+pay_mutfak=(int(mutfak)/int(aylikgelir))*100
+pay_egitim=(int(egitim)/int(aylikgelir))*100
+pay_giyim=(int(giyim)/int(aylikgelir))*100
+pay_ulasim=(int(ulasim)/int(aylikgelir))*100
+print("\n","Aylik Mutfak Harcamasi gelirinizin yuzde:",int(pay_mutfak),"'ini olusturmaktadir.")
+print("\n","Aylik Egitim Harcamasi gelirinizin yuzde:",int(pay_egitim),"'ini olusturmaktadir.")
+print("\n","Aylik Giyim Harcamasi gelirinizin yuzde:",int(pay_giyim),"'ini olusturmaktadir.")
+print("\n","Aylik Ulasim Harcamasi gelirinizin yuzde:",int(pay_ulasim),"'ini olusturmaktadir.")
+dosya=open("aylikmasraf","w")
+print("Aylik Toplam masrafiniz",ayliktop_masraf,"tl'dir.",file=dosya)
+print("\n","Aylik Mutfak Harcamasi gelirinizin yuzde:",int(pay_mutfak),"'ini olusturmaktadir.",file=dosya)
+print("\n","Aylik Egitim Harcamasi gelirinizin yuzde:",int(pay_egitim),"'ini olusturmaktadir.",file=dosya)
+print("\n","Aylik Giyim Harcamasi gelirinizin yuzde:",int(pay_giyim),"'ini olusturmaktadir.",file=dosya)
+print("\n","Aylik Ulasim Harcamasi gelirinizin yuzde:",int(pay_ulasim),"'ini olusturmaktadir.",file=dosya)
+dosya.close()
